@@ -1,0 +1,8 @@
+{
+  "title": "Tower Blocks",
+  "description": "Build the tallest tower by dropping the blocks perfectly.",
+  "keywords": ["tower", "blocks", "builder", "arcade", "timing"],
+  "category": "Arcade",
+  "author": "PewPlay",
+  "playMode": "SinglePlayer"
+}
