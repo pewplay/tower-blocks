@@ -2,6 +2,28 @@
   "$schema": "https://raw.githubusercontent.com/pewplay/pewplay/main/schema/game.schema.json",
   "title": "Tower Blocks",
   "description": "Build the tallest tower by dropping the blocks perfectly.",
+  "about": "Tower Blocks is a browser game where you drop each moving block onto the tower. Keep the stack aligned as it grows.\n\nStart a round in your browser and use the controls below to play.",
+  "howToPlay": "Drop each moving block onto the tower. Keep the stack aligned as it grows.",
+  "controls": [
+    {
+      "input": "Click / tap / Space",
+      "action": "Drop a block or restart"
+    }
+  ],
+  "tips": [
+    "Use click / tap / space to drop a block or restart.",
+    "Try another round to practice the timing and strategy."
+  ],
+  "faq": [
+    {
+      "question": "How do I play Tower Blocks?",
+      "answer": "Drop each moving block onto the tower. Keep the stack aligned as it grows."
+    },
+    {
+      "question": "Can I play Tower Blocks in a browser?",
+      "answer": "Yes. Open the game page and play without installing an app."
+    }
+  ],
   "category": "Arcade",
   "tags": [
     "tower",
@@ -10,6 +32,9 @@
     "arcade",
     "timing"
   ],
-  "author": "PewPlay",
-  "playMode": "SinglePlayer"
+  "playMode": "SinglePlayer",
+  "orientation": "any",
+  "cover": "cover.png",
+  "draft": true,
+  "author": "PewPlay"
 }
