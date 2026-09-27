@@ -192,14 +192,11 @@ class Game {
             if (e.keyCode == 32)
                 this.onAction();
         });
-        document.addEventListener('click', e => {
+        // pointerdown works for mouse, touch and pen with no click delay
+        document.addEventListener('pointerdown', e => {
+            if (e.button !== 0)
+                return;
             this.onAction();
-        });
-        document.addEventListener('touchstart', e => {
-            e.preventDefault();
-            // this.onAction();
-            // ☝️ this triggers after click on android so you
-            // insta-lose, will figure it out later.
         });
     }
     updateState(newState) {

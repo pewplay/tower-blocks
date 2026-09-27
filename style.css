@@ -6,6 +6,9 @@ html, body {
   width: 100%;
   position: relative;
   font-family: "Comfortaa", cursive;
+  touch-action: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 #container {
