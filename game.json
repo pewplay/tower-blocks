@@ -1,8 +1,48 @@
 {
+  "$schema": "https://raw.githubusercontent.com/pewplay/pewplay/main/schema/game.schema.json",
   "title": "Tower Blocks",
-  "description": "Build the tallest tower by dropping the blocks perfectly.",
-  "keywords": ["tower", "blocks", "builder", "arcade", "timing"],
+  "description": "Stack sliding blocks as high as you can, trimming away every overhang, in this calm and colorful 3D timing game that is free in your browser.",
+  "about": "Tower Blocks is a one-button stacking game with soft pastel colors and a clean 3D look. A new block slides back and forth above your tower, and you tap to drop it. Whatever hangs over the edge is sliced off and tumbles away, so the next block is only as big as the part you landed.\n\nBlocks alternate between sliding left-right and front-back, and each one moves a little faster than the last. Land a block almost exactly on top of the previous one and it keeps its full size, which is the only way to keep a wide base for the long run. Miss the tower completely and the game is over, with your height as the score.\n\nA round takes a minute or two, making it an easy pick for a quick break, but getting past twenty or thirty blocks takes real rhythm and precision.",
+  "howToPlay": "Click, tap or press Space to drop the sliding block onto the tower. Any part that overhangs is cut off, so the next block becomes smaller. Each block you place adds one point, and the game ends when a block misses the tower completely.",
+  "controls": [
+    {
+      "input": "Click / Tap",
+      "action": "Start and drop the block"
+    },
+    {
+      "input": "Space",
+      "action": "Start and drop the block"
+    }
+  ],
+  "tips": [
+    "Watch the block cross the edge of the tower and tap as it lines up, not when it looks centered from the camera angle.",
+    "Perfect drops keep the block at full size, so precision early on pays off much later.",
+    "Blocks speed up as the tower grows: find a steady rhythm instead of rushing.",
+    "When the tower gets thin, focus on one edge of the block and line it up with the same edge below."
+  ],
+  "faq": [
+    {
+      "question": "Is Tower Blocks free to play?",
+      "answer": "Yes. Tower Blocks is completely free and runs in your browser, with no download or sign-up."
+    },
+    {
+      "question": "Can I play Tower Blocks on a phone or tablet?",
+      "answer": "Yes. The scene fills the screen and a single tap drops each block, so it works well with touch."
+    },
+    {
+      "question": "Does the game get harder?",
+      "answer": "Yes. Every new block slides a little faster, and any imperfect drop makes the tower narrower, so each block is harder to land than the one before."
+    }
+  ],
   "category": "Arcade",
+  "tags": [
+    "stacking",
+    "tower",
+    "timing",
+    "one button",
+    "3d"
+  ],
   "author": "PewPlay",
-  "playMode": "SinglePlayer"
+  "playMode": "SinglePlayer",
+  "orientation": "any"
 }
