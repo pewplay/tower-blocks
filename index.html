@@ -2,31 +2,49 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Tower Blocks</title>
-  <link rel="stylesheet" href="./style.css">
-
+  <meta name="theme-color" content="#d0cbc7">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<!-- partial:index.partial.html -->
-
-<div id="container">
-	<div id="game"></div>
-	<div id="score">0</div>
-	<div id="instructions">Click, tap or press Space to place the block</div>
-	<div class="game-over">
-		<h2>Game Over</h2>
-		<p>You did great, you're the best.</p>
-		<p>Click, tap or press Space to start again</p>
-	</div>
-	<div class="game-ready">
-		<div id="start-button">Start</div>
-		<div></div>
-	</div>
-</div>
-<!-- partial -->
-<script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r83/three.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js'></script><script  src="./script.js"></script>
-
+  <div id="container" class="loading">
+    <canvas id="canvas" aria-label="Tower Blocks game area"></canvas>
+    <div id="score">0</div>
+    <div id="perfect" aria-live="polite"></div>
+    <div id="instructions">
+      <span class="kb">Click or press <kbd>Space</kbd> to drop the block</span>
+      <span class="tp">Tap anywhere to drop the block</span>
+    </div>
+    <div class="game-over">
+      <h2>Game Over</h2>
+      <p id="over-best"></p>
+      <p class="again"><span class="kb">Click or press <kbd>Space</kbd> to play again</span><span class="tp">Tap to play again</span></p>
+    </div>
+    <div class="game-ready">
+      <h1>Tower Blocks</h1>
+      <div id="start-button" role="button" aria-label="Start">Start</div>
+      <p class="hint"><span class="kb">Click or press <kbd>Space</kbd> to drop each block</span><span class="tp">Tap to drop each block</span></p>
+      <p id="best"></p>
+    </div>
+    <div id="pause-screen">
+      <div class="panel">
+        <strong>Paused</strong>
+        <span class="kb">Click or press <kbd>Space</kbd> to continue</span>
+        <span class="tp">Tap to continue</span>
+      </div>
+    </div>
+    <button id="mute" type="button" aria-label="Mute sound">
+      <svg class="on" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z"/><path class="wave" d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12"/></svg>
+      <svg class="no" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z"/><path class="wave" d="M16.5 9.5l5 5M21.5 9.5l-5 5"/></svg>
+    </button>
+  </div>
+  <script>
+    if (window.matchMedia && matchMedia('(pointer: coarse)').matches) document.documentElement.className = 'touch';
+    document.addEventListener('pointerdown', function (e) {
+      if (e.pointerType === 'touch') document.documentElement.className = 'touch';
+    }, true);
+  </script>
+  <script src="script.js"></script>
 </body>
 </html>
