@@ -210,11 +210,18 @@
 
   Block.prototype.tick = function (frames) {
     if (this.state !== 'active') return;
-    var v = this[this.plane];
-    if (v > MOVE_AMOUNT || v < -MOVE_AMOUNT) {
-      this.direction = this.direction > 0 ? this.speed : Math.abs(this.speed);
+    // Bounce between -MOVE_AMOUNT and +MOVE_AMOUNT. The direction depends on WHICH edge was passed
+    // (not on the current direction), so a large frame step can never leave the block stuck outside.
+    var speed = Math.abs(this.speed);
+    var v = this[this.plane] + this.direction * frames;
+    if (v > MOVE_AMOUNT) {
+      v = 2 * MOVE_AMOUNT - v;
+      this.direction = -speed;
+    } else if (v < -MOVE_AMOUNT) {
+      v = -2 * MOVE_AMOUNT - v;
+      this.direction = speed;
     }
-    this[this.plane] += this.direction * frames;
+    this[this.plane] = Math.max(-MOVE_AMOUNT, Math.min(MOVE_AMOUNT, v));
   };
 
   // Same cutting rules as the original game.
